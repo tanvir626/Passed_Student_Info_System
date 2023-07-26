@@ -15,19 +15,21 @@
         <div class="form-wrapper">
             
                 <div class="form-item">
-                    <label for="fullname">Student Image:</label>
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-&nbsp;<p>(less than 5 Mb)</p>
+                    <label for="fullname">Student Image:</label>&nbsp;<asp:FileUpload ID="fpmemberimage" runat="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="fpmemberimage" ForeColor="Red"></asp:RequiredFieldValidator>
+                    
+&nbsp;<label for="fullname"></label>
+
                 </div>
             <h3>Personal Information</h3>
                 <div class="form-item">
-                    <label for="fullname">Member Name:</label>
-                      <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <label for="fullname">Member Name:</label>&nbsp;<asp:TextBox ID="txtmembername" runat="server"></asp:TextBox>
+                    <label for="fullname"><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtmembername" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </label>
                     </div>
             <div class="form-item">
                     <label for="username">:From</label>&nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlfrom" runat="server" AutoPostBack="True">
                         <asp:ListItem>--Select--</asp:ListItem>
                         <asp:ListItem>School</asp:ListItem>
                         <asp:ListItem>College</asp:ListItem>
@@ -37,7 +39,7 @@
             <div class="form-item">
                     <label for="username">Gender</label>&nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlgender" runat="server" AutoPostBack="True">
                         <asp:ListItem>--Select--</asp:ListItem>
                         <asp:ListItem>Male</asp:ListItem>
                         <asp:ListItem>Female</asp:ListItem>
@@ -48,12 +50,12 @@
 
                 <div class="form-item">
                     <label for="email">Date of Birth</label>
-                    <asp:TextBox ID="DOB" Type="Date" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtdateofbirth" Type="Date" runat="server"></asp:TextBox>
                 </div>
 
                 <div class="form-item">
                     <label for="email">Bload Group:</label>
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlbloodgroup" runat="server" AutoPostBack="True">
                         <asp:ListItem>--Select--</asp:ListItem>
                         <asp:ListItem>A+</asp:ListItem>
                         <asp:ListItem>A-</asp:ListItem>
@@ -69,50 +71,54 @@
              <hr/>
                 <h3>Contact Information</h3>
                 <div class="form-item">
-                    <label for="pstate">Mobile</label>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <label for="pstate">Mobile:</label>&nbsp;<asp:TextBox ID="txtmobile" runat="server"></asp:TextBox>
+                    <label for="pstate"><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtmobile" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </label>
                     </div>
                 <div class="form-item">
                     <label for="pcity">Email:</label>
                     
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
                   
                 </div>
                 <div class="form-item">
                     <label for="pzip">Contact Address:</label>
-                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtcontactaddress" runat="server"></asp:TextBox>
                   </div>
 
                 <hr>
                 <h3>Professional Information</h3>
                <div class="form-item">
                     <label for="pzip">Present Profession</label>
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtpresentprofession" runat="server"></asp:TextBox>
                   </div>
             <div class="form-item">
                     <label for="pzip">Previous Profession</label>
-                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtpreviousprofession" runat="server"></asp:TextBox>
                   </div>
             <hr />
 
                 <h3>Registration Information</h3>
             <div class="form-item">
-                    <label for="pzip">Registration Fee</label>
-                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    <label for="pzip">Registration Fee:</label>
+                    <asp:TextBox ID="txtregistrationfee" runat="server"></asp:TextBox>
                   </div>
             <div class="form-item">
-                    <label for="pzip">Deposit Reference</label>
-                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <label for="pzip">Deposit Reference.No</label>&nbsp;<asp:TextBox ID="txtdepositreference" runat="server"></asp:TextBox>
+                    <label for="pzip"><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtdepositreference" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </label>
                   </div>
 
              <div class="form-item">
-                    <label for="pzip">Deposit Slip</label>
-                    <asp:FileUpload ID="FileUpload2" runat="server" />
-&nbsp;<p>(less than 5 Mb)</p>
+                    <label for="pzip">Deposit Slip</label>&nbsp;<asp:FileUpload ID="fpslip" runat="server" />
+&nbsp;<label for="pzip"><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="fpslip" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </label>
+                    <p>(less than 5 Mb)</p>
                   </div>
            
-          <div class="text-center">
-            <asp:Button ID="Button1"  runat="server" Text="Register" />
+          <div class="text-center" style="align:center">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnregistration"  runat="server" Text="Register" OnClick="btnsave" />
           </div>
         </div>
             </div>
