@@ -16,8 +16,8 @@
             
                 <div class="form-item">
                     <label for="fullname">Student Image:</label>
-                    <input type="file" name="studentimage" id="studentimage" required>
-                    <p>(less than 5 Mb)</p>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+&nbsp;<p>(less than 5 Mb)</p>
                 </div>
             <h3>Personal Information</h3>
                 <div class="form-item">
@@ -27,12 +27,23 @@
             <div class="form-item">
                     <label for="username">:From</label>&nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:DropDownList ID="DropDownList3" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True">
+                        <asp:ListItem>--Select--</asp:ListItem>
+                        <asp:ListItem>School</asp:ListItem>
+                        <asp:ListItem>College</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                    </asp:DropDownList>
                 &nbsp;</div>
             <div class="form-item">
                     <label for="username">Gender</label>&nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True">
+                        <asp:ListItem>--Select--</asp:ListItem>
+                        <asp:ListItem>Male</asp:ListItem>
+                        <asp:ListItem>Female</asp:ListItem>
+                        <asp:ListItem>Other</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                    </asp:DropDownList>
                 &nbsp;</div>
 
                 <div class="form-item">
@@ -42,7 +53,18 @@
 
                 <div class="form-item">
                     <label for="email">Bload Group:</label>
-                    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                        <asp:ListItem>--Select--</asp:ListItem>
+                        <asp:ListItem>A+</asp:ListItem>
+                        <asp:ListItem>A-</asp:ListItem>
+                        <asp:ListItem>B+</asp:ListItem>
+                        <asp:ListItem>B-</asp:ListItem>
+                        <asp:ListItem>AB+</asp:ListItem>
+                        <asp:ListItem>AB-</asp:ListItem>
+                        <asp:ListItem>O+</asp:ListItem>
+                        <asp:ListItem>O-</asp:ListItem>
+                        <asp:ListItem></asp:ListItem>
+                    </asp:DropDownList>
                 </div>
              <hr/>
                 <h3>Contact Information</h3>
@@ -85,15 +107,13 @@
 
              <div class="form-item">
                     <label for="pzip">Deposit Slip</label>
-                    <input type="file" name="studentimage" id="studentimage" required>
-                    <p>(less than 5 Mb)</p>
+                    <asp:FileUpload ID="FileUpload2" runat="server" />
+&nbsp;<p>(less than 5 Mb)</p>
                   </div>
            
-          
-                <bu
-                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-            tton class="register text-center " type="submit">Register</button>
-          
+          <div class="text-center">
+            <asp:Button ID="Button1"  runat="server" Text="Register" />
+          </div>
         </div>
             </div>
     </form>
