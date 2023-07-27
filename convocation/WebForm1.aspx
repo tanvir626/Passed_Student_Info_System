@@ -15,9 +15,7 @@
         <div class="form-wrapper">
             
                 <div class="form-item">
-                    <label for="fullname">Student Image:</label>&nbsp;<asp:FileUpload ID="fpmemberimage" runat="server" /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="fpmemberimage" ForeColor="Red"></asp:RequiredFieldValidator>
-                    
-&nbsp;<label for="fullname"></label>
+                    <label for="fullname">Student Image:</label>&nbsp;<asp:FileUpload ID="fpmemberimage" runat="server" />&nbsp;<label for="fullname"></label>
 
                 </div>
             <h3>Personal Information</h3>
@@ -29,7 +27,7 @@
             <div class="form-item">
                     <label for="username">:From</label>&nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:DropDownList ID="ddlfrom" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlfrom" runat="server">
                         <asp:ListItem>--Select--</asp:ListItem>
                         <asp:ListItem>School</asp:ListItem>
                         <asp:ListItem>College</asp:ListItem>
@@ -39,8 +37,8 @@
             <div class="form-item">
                     <label for="username">Gender</label>&nbsp;&nbsp;&nbsp;
                     <br />
-                    <asp:DropDownList ID="ddlgender" runat="server" AutoPostBack="True">
-                        <asp:ListItem>--Select--</asp:ListItem>
+                    <asp:DropDownList ID="ddlgender" runat="server">
+                        <asp:ListItem Value="null">--Select--</asp:ListItem>
                         <asp:ListItem>Male</asp:ListItem>
                         <asp:ListItem>Female</asp:ListItem>
                         <asp:ListItem>Other</asp:ListItem>
@@ -55,7 +53,7 @@
 
                 <div class="form-item">
                     <label for="email">Bload Group:</label>
-                    <asp:DropDownList ID="ddlbloodgroup" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlbloodgroup" runat="server">
                         <asp:ListItem>--Select--</asp:ListItem>
                         <asp:ListItem>A+</asp:ListItem>
                         <asp:ListItem>A-</asp:ListItem>
@@ -111,14 +109,13 @@
 
              <div class="form-item">
                     <label for="pzip">Deposit Slip</label>&nbsp;<asp:FileUpload ID="fpslip" runat="server" />
-&nbsp;<label for="pzip"><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="fpslip" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </label>
-                    <p>(less than 5 Mb)</p>
+&nbsp;<p>(less than 5 Mb)</p>
                   </div>
            
           <div class="text-center" style="align:center">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnregistration"  runat="server" Text="Register" OnClick="btnsave" />
+              <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
           </div>
         </div>
             </div>
