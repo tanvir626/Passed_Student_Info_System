@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,17 @@ namespace convocation
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=test;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                txtmembername.Text = Convert.ToString(Request.QueryString["id"]);
+            }
+        }
 
+        void display()
+        {
+            //txtmembername.Text;
+            //txtdateofbirth.Text;
+            //txtcontactaddress.Tex
         }
 
         protected void btnsave(object sender, EventArgs e)
@@ -28,11 +39,11 @@ namespace convocation
             }
             if (fpmemberimage.HasFile)
             {
-                fpmemberimage.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "image/" + fpmemberimage.FileName);
-
+                //fpmemberimage.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "image/" + fpmemberimage.FileName);
+                fpmemberimage.SaveAs(Server.MapPath("~/image/") + Path.GetFileName(fpmemberimage.FileName));
             }
             slippath = fpslip.FileName;
-            mampath = fpmemberimage.FileName;
+            mampath = "image/" + Path.GetFileName(fpmemberimage.FileName);
             con.Open();
             SqlCommand com = new SqlCommand("INSERT INTO convocationform (Registration_Date, Member_Name, Gender, Birthday, Blood_Group, Contact_Number, Email, Education_Institute_Name , Education_Type, Present_Profession, Previour_Profession, Rergistration_Fee, Deposit_Slip, member_img,Deposit_ref_no) VALUES ('" + DateTime.Today.ToString("yyyy-MM-dd") + "', '"+ txtmembername.Text + "', '"+ ddlgender.SelectedValue + "', '"+ txtdateofbirth.Text + "', '"+ ddlbloodgroup.SelectedValue + "', '"+ txtmobile.Text + "', '"+ txtemail.Text + "','"+a+"' ,'"+ ddlfrom.Text + "', '"+ txtpresentprofession.Text + "', '"+ txtpreviousprofession.Text + "', '" + txtregistrationfee.Text + "', '"+ slippath.ToString() + "', '"+ mampath.ToString() + "','"+txtdepositreference.Text+"')", con);
             com.ExecuteNonQuery();

@@ -42,7 +42,10 @@
                     <asp:BoundField DataField="Previour_Profession" HeaderText="Previour_Profession" SortExpression="Previour_Profession" />
                     <asp:BoundField DataField="Rergistration_Fee" HeaderText="Rergistration_Fee" SortExpression="Rergistration_Fee" />
                     <asp:BoundField DataField="Deposit_Slip" HeaderText="Deposit_Slip" SortExpression="Deposit_Slip" />
-                    <asp:BoundField DataField="member_img" HeaderText="member_img" SortExpression="member_img" />
+                    <asp:ImageField DataImageUrlField="member_img" HeaderText="member_img">
+                        <ControlStyle Height="50px" Width="50px" />
+                        <ItemStyle Height="26px" HorizontalAlign="Center" VerticalAlign="Middle" Width="50px" />
+                    </asp:ImageField>
                 </Columns>
             </asp:GridView>
         </div>
