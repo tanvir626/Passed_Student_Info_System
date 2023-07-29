@@ -14,7 +14,13 @@
         <h2>&nbsp;Registration From</h2>
         <div class="form-wrapper">
             
-                <div class="form-item">
+                <br />
+            <div class="form-item">
+                    <label for="fullname">Student ID :</label>&nbsp;<asp:Label ID="lblid" runat="server" ForeColor="Red" Font-Bold="true" />&nbsp;<label for="fullname"></label>
+
+                </div>
+            
+            <div class="form-item">
                     <label for="fullname">Student Image:</label>&nbsp;<asp:FileUpload ID="fpmemberimage" runat="server" />&nbsp;<label for="fullname"></label>
 
                 </div>
@@ -25,10 +31,10 @@
                     </label>
                     </div>
             <div class="form-item">
-                    <label for="username">:From</label>&nbsp;&nbsp;&nbsp;
+                    <label for="username">School/College</label>&nbsp;&nbsp;&nbsp;
                     <br />
                     <asp:DropDownList ID="ddlfrom" runat="server">
-                        <asp:ListItem>--Select--</asp:ListItem>
+                        <asp:ListItem Value="null">--Select--</asp:ListItem>
                         <asp:ListItem>School</asp:ListItem>
                         <asp:ListItem>College</asp:ListItem>
                         <asp:ListItem></asp:ListItem>
@@ -41,7 +47,6 @@
                         <asp:ListItem Value="null">--Select--</asp:ListItem>
                         <asp:ListItem>Male</asp:ListItem>
                         <asp:ListItem>Female</asp:ListItem>
-                        <asp:ListItem>Other</asp:ListItem>
                         <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
                 &nbsp;</div>
@@ -54,7 +59,7 @@
                 <div class="form-item">
                     <label for="email">Bload Group:</label>
                     <asp:DropDownList ID="ddlbloodgroup" runat="server">
-                        <asp:ListItem>--Select--</asp:ListItem>
+                         <asp:ListItem Value="null">--Select--</asp:ListItem>
                         <asp:ListItem>A+</asp:ListItem>
                         <asp:ListItem>A-</asp:ListItem>
                         <asp:ListItem>B+</asp:ListItem>
@@ -63,7 +68,6 @@
                         <asp:ListItem>AB-</asp:ListItem>
                         <asp:ListItem>O+</asp:ListItem>
                         <asp:ListItem>O-</asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
                 </div>
              <hr/>
@@ -114,7 +118,8 @@
            
           <div class="text-center" style="align:center">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnregistration"  runat="server" Text="Register" OnClick="btnsave" />
+            <asp:Button ID="btnregistration"  runat="server" Text="Register" OnClick="btnsave_OnClick" />
+              &nbsp;<asp:Button ID="btnupdate"  runat="server" Text="Update" OnClick="btnupdate_Click"  />
               <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
           </div>
         </div>

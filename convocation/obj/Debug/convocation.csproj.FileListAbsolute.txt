@@ -72,3 +72,7 @@ C:\Users\testw\source\repos\convocation\obj\Debug\convocation.csproj.CoreCompile
 C:\Users\testw\source\repos\convocation\obj\Debug\convocation.csproj.CopyComplete
 C:\Users\testw\source\repos\convocation\obj\Debug\convocation.dll
 C:\Users\testw\source\repos\convocation\obj\Debug\convocation.pdb
+C:\Users\testw\source\repos\convocation\bin\BouncyCastle.Crypto.dll
+C:\Users\testw\source\repos\convocation\bin\itextsharp.dll
+C:\Users\testw\source\repos\convocation\bin\itextsharp.xmlworker.dll
+C:\Users\testw\source\repos\convocation\bin\itextsharp.xml
