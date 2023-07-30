@@ -77,7 +77,7 @@ namespace convocation
             slippath = fpslip.FileName;
             mampath = "image/" + Path.GetFileName(fpmemberimage.FileName);
             con.Open();
-            SqlCommand com = new SqlCommand("INSERT INTO convocationform (Registration_Date, Member_Name, Gender, Birthday, Blood_Group, Contact_Number, Email, Education_Institute_Name , Education_Type, Present_Profession, Previour_Profession, Rergistration_Fee, Deposit_Slip, member_img,Deposit_ref_no) VALUES ('" + DateTime.Today.ToString("yyyy-MM-dd") + "', '"+ txtmembername.Text + "', '"+ ddlgender.SelectedValue + "', '"+ txtdateofbirth.Text + "', '"+ ddlbloodgroup.SelectedValue + "', '"+ txtmobile.Text + "', '"+ txtemail.Text + "','"+a+"' ,'"+ ddlfrom.Text + "', '"+ txtpresentprofession.Text + "', '"+ txtpreviousprofession.Text + "', '" + txtregistrationfee.Text + "', '"+ slippath.ToString() + "', '"+ mampath.ToString() + "','"+txtdepositreference.Text+"')", con);
+            SqlCommand com = new SqlCommand("INSERT INTO convocationform (Registration_Date, Member_Name, Gender, Birthday, Blood_Group, Contact_Number, Email, Education_Type, Present_Profession, Previour_Profession, Rergistration_Fee, Deposit_Slip, member_img,Deposit_ref_no) VALUES ('" + DateTime.Today.ToString("yyyy-MM-dd") + "', '"+ txtmembername.Text + "', '"+ ddlgender.SelectedValue + "', '"+ txtdateofbirth.Text + "', '"+ ddlbloodgroup.SelectedValue + "', '"+ txtmobile.Text + "', '"+ txtemail.Text + "','"+a+"' ,'"+ ddlfrom.Text + "', '"+ txtpresentprofession.Text + "', '"+ txtpreviousprofession.Text + "', '" + txtregistrationfee.Text + "', '"+ slippath.ToString() + "', '"+ mampath.ToString() + "','"+txtdepositreference.Text+"')", con);
             com.ExecuteNonQuery();
             con.Close();
             cls();
