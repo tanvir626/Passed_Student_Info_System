@@ -114,7 +114,7 @@ namespace convocation
             string slipimg, memberimg;
             string id = Convert.ToString(Request.QueryString["id"]);
             con.Open();
-            SqlCommand com = new SqlCommand("Select Member_Name, Gender, Birthday, Blood_Group , Contact_Number, Email, Address  , Education_Type, Present_Profession, Previour_Profession, Rergistration_Fee, Deposit_Slip, member_img,Deposit_ref_no from convocationform where Member_No='" + id+"'", con);
+            SqlCommand com = new SqlCommand("Select Member_Name, Gender, Birthday, Blood_Group , Contact_Number, Email, Address  , Education_Type, Present_Profession, Previour_Profession, Rergistration_Fee, Deposit_Slip, member_img,Deposit_ref_no,passing_year from convocationform where Member_No='" + id+"'", con);
             SqlDataReader dr = com.ExecuteReader();
             while(dr.Read())
             {
@@ -133,6 +133,7 @@ namespace convocation
                 txtpreviousprofession.Text = dr.GetValue(9).ToString();
                 txtregistrationfee.Text = dr.GetValue(10).ToString();
                 txtdepositreference.Text = dr.GetValue(13).ToString();
+                txtlpass.Text = dr.GetValue(14).ToString();
                 //slipimg= dr.GetValue(11).ToString();
                 //memberimg= dr.GetValue(12).ToString();
 
@@ -144,7 +145,7 @@ namespace convocation
         protected void btnupdate_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand com = new SqlCommand("UPDATE convocationform set Member_Name='" + txtmembername.Text + "',Gender='" + ddlgender.SelectedValue + "', Birthday='" + txtdateofbirth.Text + "',Blood_Group='" + ddlbloodgroup.SelectedValue + "',Contact_Number='" + txtmobile.Text + "', Email='" + txtemail.Text + "', Address='" + txtcontactaddress.Text + "',Education_Type='" + ddlfrom.SelectedValue + "', Present_Profession='" + txtpresentprofession.Text + "', Previour_Profession='" + txtpreviousprofession.Text + "', Rergistration_Fee='" + txtregistrationfee.Text + "', Deposit_ref_no='" + txtdepositreference.Text + "'    where Member_No='" + Convert.ToString(Request.QueryString["id"]) + "'", con);
+            SqlCommand com = new SqlCommand("UPDATE convocationform set Member_Name='" + txtmembername.Text + "',Gender='" + ddlgender.SelectedValue + "', Birthday='" + txtdateofbirth.Text + "',Blood_Group='" + ddlbloodgroup.SelectedValue + "',Contact_Number='" + txtmobile.Text + "', Email='" + txtemail.Text + "', Address='" + txtcontactaddress.Text + "',Education_Type='" + ddlfrom.SelectedValue + "', Present_Profession='" + txtpresentprofession.Text + "', Previour_Profession='" + txtpreviousprofession.Text + "', Rergistration_Fee='" + txtregistrationfee.Text + "', Deposit_ref_no='" + txtdepositreference.Text + "', passing_year='"+txtlpass.Text+"'where Member_No='" + Convert.ToString(Request.QueryString["id"]) + "'", con);
                 com.ExecuteNonQuery();
             con.Close();
             Response.Redirect("WebForm3.aspx");

@@ -114,6 +114,15 @@ namespace convocation
         protected global::System.Web.UI.HtmlControls.HtmlTable tbtPNR;
 
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
         /// lblidforpdf control.
         /// </summary>
         /// <remarks>
@@ -121,6 +130,15 @@ namespace convocation
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblidforpdf;
+
+        /// <summary>
+        /// lblpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpass;
 
         /// <summary>
         /// lblmembername control.
@@ -177,6 +195,15 @@ namespace convocation
         protected global::System.Web.UI.WebControls.Label lblemail;
 
         /// <summary>
+        /// lbladdress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbladdress;
+
+        /// <summary>
         /// lblschool control.
         /// </summary>
         /// <remarks>
@@ -204,15 +231,6 @@ namespace convocation
         protected global::System.Web.UI.WebControls.Label lblpreviousp;
 
         /// <summary>
-        /// lbldepositslip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbldepositslip;
-
-        /// <summary>
         /// lbldepositreferno control.
         /// </summary>
         /// <remarks>
@@ -229,14 +247,5 @@ namespace convocation
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblregis;
-
-        /// <summary>
-        /// lblmemberimage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmemberimage;
     }
 }

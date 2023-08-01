@@ -27,6 +27,9 @@
             width: 477px;
             height: 37px;
         }
+        .auto-style7 {
+            text-align: center;
+        }
         </style>
 </head>
 <body>
@@ -50,7 +53,7 @@
             <p class="auto-style1">
                
             </div>
-         <div  id="member" runat="server" visible="true">
+         <div  id="member" runat="server" visible="false">
                 <h1 style="font-weight: bold; text-align:center">Member Information</h1>
                 <br />
                 <br />
@@ -58,14 +61,19 @@
                 <div class="table-bordered">
                     <table class="table-striped" id="tbtPNR" runat="server" style="width: 100%; color: green; font-size: large" border="1">
                         <tr>
-                            <td style="font-weight: bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </td>
-                            <td style="font-weight: bold">&nbsp;</td>
+                            <td style="font-weight: bold" class="auto-style7" colspan="2">
+                                <asp:Image ID="Image1" runat="server" Height="155px" Width="195px" />
+                            </td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold" class="auto-style4">Member Id</td>
                             <td class="auto-style3">
                                 <asp:Label ID="lblidforpdf" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold" class="auto-style4">Passsing Year</td>
+                            <td class="auto-style3">
+                                <asp:Label ID="lblpass" runat="server"></asp:Label></td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold" class="auto-style4">Name</td>
@@ -99,6 +107,11 @@
                                 <asp:Label ID="lblemail" runat="server"></asp:Label></td>
                         </tr>
                         <tr>
+                            <td style="font-weight: bold" class="auto-style4">Address</td>
+                            <td class="auto-style3">
+                                <asp:Label ID="lbladdress" runat="server"></asp:Label></td>
+                        </tr>
+                        <tr>
                             <td style="font-weight: bold" class="auto-style4">School/Collage</td>
                             <td class="auto-style3">
                                 <asp:Label ID="lblschool" runat="server"></asp:Label></td>
@@ -114,11 +127,6 @@
                                 <asp:Label ID="lblpreviousp" runat="server"></asp:Label></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold" class="auto-style4">Deposit Slip</td>
-                            <td class="auto-style3">
-                                <asp:Label ID="lbldepositslip" runat="server"></asp:Label></td>
-                        </tr>
-                        <tr>
                             <td style="font-weight: bold" class="auto-style4">Deposit_Refer_No</td>
                             <td class="auto-style3">
                                 <asp:Label ID="lbldepositreferno" runat="server"></asp:Label></td>
@@ -128,12 +136,7 @@
                             <td class="auto-style3">
                                 <asp:Label ID="lblregis" runat="server"></asp:Label></td>
                         </tr>
-                        <tr>
-                            <td style="font-weight: bold" class="auto-style4">Member Image</td>
-                            <td class="auto-style3">
-                                <asp:Label ID="lblmemberimage" runat="server"></asp:Label></td>
-                        </tr>
-                    </table>
+                        </table>
                 </div>
                 <br />
                 <br />

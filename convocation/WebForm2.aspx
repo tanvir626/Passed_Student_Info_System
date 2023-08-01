@@ -26,7 +26,7 @@
                     <asp:TextBox ID="TextBox1" PlaceHolder="Enter Member Number" runat="server" CssClass="auto-style2" OnTextChanged="TextBox1_TextChanged" Width="211px"></asp:TextBox>
                 </p>
         <div class="form-wrapper"  style="width: 100%; height: 400px; overflow-y: auto;">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="auto-style3" Width="100%">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="auto-style3" Width="100%" DataKeyNames="Member_No">
                 <Columns>
                     <asp:BoundField DataField="Member_No" HeaderText="Member_No" InsertVisible="False" ReadOnly="True" SortExpression="Member_No" />
                     <asp:BoundField DataField="Registration_Date" HeaderText="Registration_Date" SortExpression="Registration_Date" />
@@ -36,15 +36,20 @@
                     <asp:BoundField DataField="Blood_Group" HeaderText="Blood_Group" SortExpression="Blood_Group" />
                     <asp:BoundField DataField="Contact_Number" HeaderText="Contact_Number" SortExpression="Contact_Number" />
                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                    <asp:BoundField DataField="Education_Institute_Name" HeaderText="Education_Institute_Name" SortExpression="Education_Institute_Name" />
                     <asp:BoundField DataField="Education_Type" HeaderText="Education_Type" SortExpression="Education_Type" />
                     <asp:BoundField DataField="Present_Profession" HeaderText="Present_Profession" SortExpression="Present_Profession" />
                     <asp:BoundField DataField="Previour_Profession" HeaderText="Previour_Profession" SortExpression="Previour_Profession" />
                     <asp:BoundField DataField="Rergistration_Fee" HeaderText="Rergistration_Fee" SortExpression="Rergistration_Fee" />
-                    <asp:BoundField DataField="Deposit_Slip" HeaderText="Deposit_Slip" SortExpression="Deposit_Slip" />
+                    <asp:BoundField DataField="Deposit_ref_no" HeaderText="Deposit_ref_no" SortExpression="Deposit_ref_no" />
+                    <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                    <asp:BoundField DataField="passing_year" HeaderText="passing_year" SortExpression="passing_year" />
                     <asp:ImageField DataImageUrlField="member_img" HeaderText="member_img">
-                        <ControlStyle Height="50px" Width="50px" />
-                        <ItemStyle Height="26px" HorizontalAlign="Center" VerticalAlign="Middle" Width="50px" />
+                    </asp:ImageField>
+                    <asp:ImageField>
+                        <ControlStyle Height="60px" Width="60px" />
+                    </asp:ImageField>
+                    <asp:ImageField DataImageUrlField="Deposit_Slip" HeaderText="Deposit_Slip">
+                        <ControlStyle Height="60px" Width="60px" />
                     </asp:ImageField>
                 </Columns>
             </asp:GridView>

@@ -16,6 +16,7 @@ namespace convocation
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        string physicalImagePath;
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=test;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -112,15 +113,20 @@ namespace convocation
                 lblcontact.Text= dr.GetValue(6).ToString();
                 lblemail.Text= dr.GetValue(7).ToString();
                 lblschool.Text= dr.GetValue(8).ToString();
-                lblpresentp.Text= dr.GetValue(10).ToString();
-                lblpreviousp.Text= dr.GetValue(11).ToString();
+                lblpresentp.Text= dr.GetValue(9).ToString();
+                lblpreviousp.Text= dr.GetValue(10).ToString();
+                lblregis.Text=dr.GetValue(11).ToString();
                 lblregis.Text= dr.GetValue(12).ToString();
-                lbldepositslip.Text= dr.GetValue(13).ToString();
-                lbldepositreferno.Text= dr.GetValue(15).ToString();
-                lblmemberimage.Text= dr.GetValue(14).ToString();
+                lbldepositreferno.Text= dr.GetValue(14).ToString();
+                lbladdress.Text= dr.GetValue(15).ToString();
+                lblpass.Text= dr.GetValue(16).ToString();
+               /// string depimagepath = dr.GetValue(12).ToString();
+                string memimagepath = dr.GetValue(13).ToString();
+
+                physicalImagePath = Server.MapPath(memimagepath);
+
 
             }
-            dr.Close();
             con.Close();
 
             using (StringWriter sw = new StringWriter())
@@ -129,11 +135,17 @@ namespace convocation
                 {
                     StringBuilder sb = new StringBuilder();
                     member.RenderControl(hw);
+                    Image1.RenderControl(hw);
                     StringReader sr = new StringReader(sw.ToString());
                     Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0);
                     PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
                     pdfDoc.Open();
-                    pdfDoc.NewPage();
+                    iTextSharp.text.Image memberImage = iTextSharp.text.Image.GetInstance(physicalImagePath);
+
+                    pdfDoc.Add(memberImage);
+
+                    //pdfDoc.NewPage();
+
                     XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
                     pdfDoc.Close();
                     Response.ContentType = "application/pdf";
