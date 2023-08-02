@@ -96,15 +96,6 @@ namespace convocation
         protected global::System.Web.UI.WebControls.DropDownList ddlgender;
 
         /// <summary>
-        /// txtdateofbirth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdateofbirth;
-
-        /// <summary>
         /// ddlbloodgroup control.
         /// </summary>
         /// <remarks>
@@ -112,6 +103,15 @@ namespace convocation
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlbloodgroup;
+
+        /// <summary>
+        /// txtdateofbirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtdateofbirth;
 
         /// <summary>
         /// txtmobile control.

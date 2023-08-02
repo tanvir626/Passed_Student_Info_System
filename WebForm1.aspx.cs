@@ -92,12 +92,12 @@ namespace convocation
             {
                 int id = 0;
                 con.Open();
-                SqlCommand com = new SqlCommand("Select count(Member_No) from Convocationform", con);
+                SqlCommand com = new SqlCommand("Select Max(Member_No) from Convocationform", con);
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
                 {
                     id = int.Parse(dr.GetValue(0).ToString());
-                    id+=2;
+                    id+=1;
                 }
                 lblid.Text = id.ToString();
                 con.Close();

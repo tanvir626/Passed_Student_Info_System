@@ -115,8 +115,8 @@ namespace convocation
                 lblschool.Text= dr.GetValue(8).ToString();
                 lblpresentp.Text= dr.GetValue(9).ToString();
                 lblpreviousp.Text= dr.GetValue(10).ToString();
-                lblregis.Text=dr.GetValue(11).ToString();
-                lblregis.Text= dr.GetValue(12).ToString();
+               // lblregis.Text=dr.GetValue(11).ToString();
+               // lblregis.Text= dr.GetValue(12).ToString();
                 lbldepositreferno.Text= dr.GetValue(14).ToString();
                 lbladdress.Text= dr.GetValue(15).ToString();
                 lblpass.Text= dr.GetValue(16).ToString();

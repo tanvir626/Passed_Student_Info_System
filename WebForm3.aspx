@@ -174,12 +174,7 @@
                         <td class="auto-style3">
                             <asp:Label ID="lbldepositreferno" runat="server"></asp:Label></td>
                     </tr>
-                    <tr>
-                        <td style="font-weight: bold" class="auto-style4">Registration Fee</td>
-                        <td class="auto-style3">
-                            <asp:Label ID="lblregis" runat="server"></asp:Label></td>
-                    </tr>
-                </table>
+                    </table>
             </div>
             <br />
             <br />
