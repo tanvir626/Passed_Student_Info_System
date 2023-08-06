@@ -23,13 +23,17 @@ namespace convocation
 
             GridView1.DataSourceID = "SqlDataSource2";
             GridView1.DataBind();
+            txtvarchar.Text = string.Empty;
+
 
         }
 
-        protected void txtvarchar_TextChanged(object sender, EventArgs e)
+
+        protected void txtvarchar_TextChanged1(object sender, EventArgs e)
         {
             GridView1.DataSourceID = "SqlDataSource3";
             GridView1.DataBind();
+            TextBox1.Text = string.Empty;
         }
     }
 }
