@@ -17,12 +17,6 @@
             margin-right: 0px;
         }
 
-        .auto-style4 {
-            margin: 15px;
-            width: 100%;
-            height: 726px;
-        }
-
         .auto-style5 {
             text-align: center;
             height: 1px;
@@ -32,15 +26,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container shadow-lg p-3 mb-5 bg-body-tertiary" style="background-color: cornflowerblue">
+        <div class="container shadow-lg p-3 mb-5 bg-body-tertiary" style="background-color: cornflowerblue;height: 500px;">
             <h1 class="auto-style5">&nbsp;</h1>
             <h1 class="auto-style1">Participant Datebase (For Admin)</h1>
             <p class="auto-style1">
-                <asp:TextBox ID="txtmainsearch" type="search" AutoPostBack="true" runat="server" OnTextChanged="txtmainsearch_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtvarchar" runat="server" AutoPostBack="true" OnTextChanged="txtvarchar_TextChanged"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   
                 <asp:TextBox ID="TextBox1" PlaceHolder="Enter Member Number" runat="server" CssClass="auto-style2" OnTextChanged="TextBox1_TextChanged" Width="211px"></asp:TextBox>
             </p>
-            <div class="auto-style4" style="overflow-y: auto;">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="auto-style3" Width="100%" DataKeyNames="Member_No" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+          <div class="gridview-container auto-style4">
+                <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="auto-style3" Width="50%" DataKeyNames="Member_No" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" Height="107px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="Member_No" HeaderText="Member Id" InsertVisible="False" ReadOnly="True" SortExpression="Member_No">
@@ -111,10 +107,14 @@
             </div>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:convoview %>" SelectCommand="SELECT * FROM [convocationform]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:convoview %>" SelectCommand="SELECT * FROM [convocationform] WHERE [Member_No] = @Member_No OR [Member_Name]=@Member_Name;">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:convoview %>" SelectCommand="SELECT * FROM [convocationform] WHERE ([Member_Name] = @Member_Name)">
                 <SelectParameters>
-                    <asp:ControlParameter ControlID="txtmainsearch" Name="Member_No" PropertyName="Text" />
-                    <asp:ControlParameter ControlID="txtmainsearch" Name="Member_Name" PropertyName="Text" />
+                    <asp:ControlParameter ControlID="txtvarchar" Name="Member_Name" PropertyName="Text" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:convoview %>" SelectCommand="SELECT Member_No, Registration_Date, Member_Name, Gender, Birthday, Blood_Group, Contact_Number, Email, Education_Type, Present_Profession, Previour_Profession, Rergistration_Fee, Deposit_Slip, member_img, Deposit_ref_no, Address, passing_year FROM convocationform WHERE (Gender = @x) OR (Member_Name = @x) OR (Blood_Group = @x) OR (Contact_Number = @x) OR (Education_Type = @x) OR (Address = @x) OR (passing_year = @x)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="txtvarchar" Name="x" PropertyName="Text" />
                 </SelectParameters>
             </asp:SqlDataSource>
         </div>
