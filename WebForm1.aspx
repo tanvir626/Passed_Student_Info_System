@@ -5,17 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            
+
+            <div>
             <label for="textBox1">Search by ID or Name:</label>
-           <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
             <button type="submit" id="button1" runat="server">Search</button>
-        </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Member_No" DataSourceID="SqlDataSource1">
+                </div>
+        
+
+
+        <div class="container">
+        <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover table table-responsive table-info" runat="server" AutoGenerateColumns="False" DataKeyNames="Member_No" DataSourceID="SqlDataSource1" HorizontalAlign="Center">
             <Columns>
                 <asp:BoundField DataField="Member_No" HeaderText="Member_No" InsertVisible="False" ReadOnly="True" SortExpression="Member_No" />
                 <asp:BoundField DataField="Registration_Date" HeaderText="Registration_Date" SortExpression="Registration_Date" />
@@ -36,11 +41,11 @@
                 <asp:BoundField DataField="passing_year" HeaderText="passing_year" SortExpression="passing_year" />
             </Columns>
         </asp:GridView>
+            </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:convoview %>" SelectCommand="SELECT * FROM [convocationform]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:convoview %>" SelectCommand="SELECT * FROM [convocationform]SELECT * FROM convocationform WHERE ID = @Member_No OR Member_Name LIKE @Name"></asp:SqlDataSource>
-       
-        <br />
 
-    </form>
+        <br />
+        </form>
 </body>
 </html>

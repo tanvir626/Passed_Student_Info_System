@@ -11,7 +11,7 @@ namespace convocation
 {
 
 
-    public partial class WebForm2
+    public partial class Admin
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace convocation
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// txtsearch control.
+        /// txtvarchar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsearch;
+        protected global::System.Web.UI.WebControls.TextBox txtvarchar;
 
         /// <summary>
         /// TextBox1 control.
@@ -42,21 +42,39 @@ namespace convocation
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// gd1 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gd1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// view control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource view;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+
+        /// <summary>
+        /// SqlDataSource3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
     }
 }

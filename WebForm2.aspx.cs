@@ -11,16 +11,14 @@ namespace convocation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-            {
-            }
+
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            GridView1.DataSourceID = "SqlDataSource2";
-            GridView1.DataBind();
-
+            gd1.DataSourceID = "filter";
+            gd1.DataBind();
+            txtsearch.Text = string.Empty;
         }
     }
 }
